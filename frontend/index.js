@@ -6,9 +6,10 @@ const postData = async () => {
     const data = new FormData();
     data.append("file", "adsad");
     const request = await fetch("/api/data", {
+        Accept: "application/json",
         header: "Content-Type: application/json",
         method: 'POST',
-        body: "asdasd"
+        body: {"asdasd": "SD"}
 
     });
     const response = await request.text();

@@ -1,10 +1,14 @@
 const bodyParser = require("body-parser");
 const express = require('express');
+const morgan = require('morgan');
+
 const app = express();
 
 app.use(express.static(__dirname + '/frontend'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(morgan('combined'));
 
 
 app.get('/', (req, res) => {
